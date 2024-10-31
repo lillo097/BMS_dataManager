@@ -38,13 +38,6 @@ async def run():
         device_info = await get_device_info(device)
         print(device_info)
         print("-" * 30)
-
-loop = asyncio.get_event_loop()
-loop.run_until_complete(run())
-
-
-
-
 ##
 import asyncio
 from bleak import BleakClient
@@ -72,7 +65,14 @@ async def main():
             await client.start_notify(characteristic_uuid, notification_handler)
             print(f"Successfully subscribed to notifications for {characteristic_uuid}.")
             await asyncio.sleep(30)  # Listen for notifications for 30 seconds
-            await client.stop_notify(characteristic_uuid)
+            await clien
+
+loop = asyncio.get_event_loop()
+loop.run_until_complete(run())
+
+
+
+t.stop_notify(characteristic_uuid)
             print(f"Unsubscribed from notifications for {characteristic_uuid}.")
         except Exception as e:
             print(f"Failed to subscribe to characteristic {characteristic_uuid}: {e}")
