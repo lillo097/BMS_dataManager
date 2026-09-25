@@ -6,6 +6,7 @@ import struct
 from datetime import datetime
 
 DEVICE_ADDRESS = "A5:C2:37:6A:30:1E"
+#DEVICE_ADDRESS = "0C4ECFA1-0EAE-533B-D2F6-19ED842F20C6"
 BMS_SERVICE_UUID = "0000ff00-0000-1000-8000-00805f9b34fb"
 BMS_RX_CHAR_UUID = "0000ff01-0000-1000-8000-00805f9b34fb"
 BMS_TX_CHAR_UUID = "0000ff02-0000-1000-8000-00805f9b34fb"
@@ -21,7 +22,7 @@ bms_data_error = False
 interaction_timing = 1
 
 data_corrente = datetime.now()
-data_formattata = data_corrente.strftime("%d-%m-%Y")
+data_formattata = data_corrente.strftime("%d-%m-%Y_%H-%M-%S")
 
 JSON_FILE_PATH_1 = f'bms_data_(for-general-parameters)_{data_formattata}.json'
 JSON_FILE_PATH_2 = f'bms_data_log_(for-current-parameters)_{data_formattata}.json'
